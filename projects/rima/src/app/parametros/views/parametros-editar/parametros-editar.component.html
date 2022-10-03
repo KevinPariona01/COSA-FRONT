@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>Mantenimiento de procesos / {{proceso.nombre}}</h1>
+<mat-divider></mat-divider>
+<br>
+<form class="example-container" #newForm="ngForm" (ngSubmit)="guardar(newForm)">
+
+    <div mat-dialog-content class="contenedor" fxLayout="row" fxLayoutGap="10px">
+
+        <mat-form-field appearance="fill" fxFlex="100">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre" name="nombre" #nombre="ngModel" [(ngModel)]="proceso.nombre"
+                minlength="3" required />
+            <mat-hint class="error" *ngIf="proceso.nombre.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+        </mat-form-field>        
+    </div>
+
+    
+    <div fxLayout="row" fxFlexAlign="center" fxLayoutGap="10px">  
+
+        <mat-form-field appearance="fill" fxFlex="20">
+            <mat-label>Acronimo</mat-label>
+            <input matInput  placeholder="acronimo" name="acronimo" #acronimo="ngModel"
+                [(ngModel)]="proceso.acronimo" minlength="3" required />
+            <mat-hint class="error" *ngIf="proceso.acronimo.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+        </mat-form-field>  
+
+        <mat-form-field appearance="fill" fxFlex="65">
+            <mat-label>Firma</mat-label>
+            <input matInput placeholder="firma" name="firma" #firma="ngModel"
+                [(ngModel)]="proceso.firma" minlength="3" required />
+            <mat-hint class="error" *ngIf="proceso.firma.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+        </mat-form-field>  
+
+        <button type="button" mat-raised-button color="primary" class="generar">
+            Generar
+        </button>
+        
+    </div>    
+
+    <div class="contenedor" fxLayout="row">
+
+        <mat-form-field appearance="fill" fxFlex="100">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="descripcion" name="descripcion" #descripcion="ngModel"
+                [(ngModel)]="proceso.descripcion" minlength="3" required ></textarea>
+            <mat-hint class="error" *ngIf="proceso.descripcion.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+        <button type="button" mat-raised-button (click)="cerrar()">
+            Cancelar
+        </button>
+
+        <button mat-raised-button type="submit" cdkFocusInitial [disabled]="!newForm.form.valid" color="primary">
+            <mat-icon >save</mat-icon>
+            <span style="margin-left: 8px">Guardar</span>
+        </button>
+    </div>
+</form>

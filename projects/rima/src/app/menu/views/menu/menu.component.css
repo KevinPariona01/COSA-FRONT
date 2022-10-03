@@ -1,0 +1,118 @@
+.contenedor-padre {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.barra {
+  color: #fff;
+  background-color: #1d85bf;
+  flex: 0 1 auto;
+}
+
+.contenido {
+  flex: 1 1 auto;
+}
+
+.padding-10 {
+  padding: 1%;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+
+.header__login {
+  display: flex;
+  flex-direction: row;
+  background-color: #144AA7;
+  border-radius: 50px 0 0 50px;
+}
+
+.header__login .logout {
+  border-left: 1px solid #fff;
+}
+
+.header__login .logout {
+  border-left: 1px solid #fff;
+}
+
+.d-flex {
+  display: -webkit-box!important;
+  display: flex!important;
+}
+
+.user {
+  padding: 6px 20px 6px 10px;
+}
+
+.user p {
+  margin: 0;
+}
+
+.user__name {
+  font-weight: 500;
+}
+
+.text-uppercase {
+  text-transform: uppercase!important;
+}
+
+.icon_user{
+  padding-top: 11px;
+}
+
+.user img {
+  float: left;
+  margin-right: 7px;
+}
+
+.btn_salir{
+  background: transparent;
+  outline: none;
+  border: 0;
+  padding-top: 17px;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  padding: 0 0 0 16px;
+}
+
+mat-icon{
+  margin-right: 7px;
+}
+
+.select{
+  color: #fff !important;
+  background-color: #1d85bf !important;
+}
+
+a:hover{
+  color: #fff;
+  background-color: #1d85bf !important; 
+}
+
+.mat-list-base {
+  padding-top: 1px;
+}
+/**/
+.card{
+  width: 100%;
+}
+.botones{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.Sitema{
+  max-width: 250px
+}
+.Conflictos{
+  max-width: 250px
+}
+.Reportes{
+  max-width: 250px
+}

@@ -1,0 +1,103 @@
+{
+  "extends": "../../.eslintrc.json",
+  "ignorePatterns": [
+    "!**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.js"
+      ],
+      "parserOptions": {
+        "project": [
+          "./tsconfig.app.json",
+          "./tsconfig.spec.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@angular-eslint/recommended"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.app.json",
+          "tsconfig.spec.json",
+          "e2e/tsconfig.json"
+        ],
+        "tsconfigRootDir": ".",
+        "createDefaultProgram": true,
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+      },
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "xs",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "xs",
+            "style": "camelCase"
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": [
+              "PascalCase"
+            ],
+            "custom": {
+              "regex": "^Xs[A-Z]",
+              "match": true
+            }
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-implicit-any-catch": "error"
+      }
+    }
+  ]
+}

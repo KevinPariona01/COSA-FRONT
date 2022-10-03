@@ -1,0 +1,20 @@
+h1 {
+  padding: 18px 24px 18px 24px;
+  background-color: #144aa7;
+}
+.mat-dialog-title {
+  margin: 0 !important;
+  color: #fff;
+}
+.body {
+  padding: 0 24px 24px 24px;
+}
+.f1 {
+  display: flex;
+}
+.descripcion {
+  width: 98%;
+}
+.mat-dialog-container {
+  padding: 0 !important;
+}

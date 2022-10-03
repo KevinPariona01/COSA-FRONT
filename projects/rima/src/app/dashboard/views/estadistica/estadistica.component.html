@@ -1,0 +1,38 @@
+<app-menu >
+    <div class="contenedorBody">
+            <h2>REPORTE ESTADISTICO</h2>
+            <mat-divider></mat-divider>
+            <mat-form-field>
+                <mat-select placeholder="Estado">
+                    <mat-option value="0" (click)='select(0)'>
+                        -TODOS LOS ESTADOS-
+                    </mat-option>
+                    <mat-option *ngFor="let e of estado" [value]="e.value" (click)='select(e.value)'>
+                        {{e.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        <div class="contenedorChart">
+
+            <div class="elementoChart">
+                <mat-card>
+                    <div class="contCard">
+                        <h3>TITULO</h3>
+                    </div>
+                    <canvas id="MyChartbar">{{chartbar}}</canvas>
+                </mat-card>
+            </div>
+
+            <div class="elementoChart" >
+                <mat-card>
+                    <div class="contCard">
+                        <h3>TITULO</h3>
+                    </div>
+                    <canvas id="MyChartpie">{{chartpie}}</canvas>
+                </mat-card>
+            </div>
+
+        </div>
+
+    </div>
+</app-menu>

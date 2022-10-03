@@ -1,0 +1,35 @@
+table{
+    width: 98%;
+}
+th{
+    color: white;
+    background-color: #1d85bf;
+  }
+.mat-column-id {
+    max-width: 100px !important;
+  }
+.mat-column-nombre {
+    max-width: 100px !important;
+  }
+  .mat-column-descripcion {
+    max-width: 100px !important;
+  }
+  .mat-column-estado {
+    min-width: 100px !important;
+  }
+  .mat-column-accion {
+    max-width: 200px !important;
+  }
+.item{
+    padding: 1%;
+    text-align: right;
+}
+.zonas{
+ display: flex;
+}
+.zonas div{
+  padding: 1%;
+}
+.catalogoP{
+  background-color: #e2e7ea;
+}

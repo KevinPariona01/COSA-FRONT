@@ -1,0 +1,31 @@
+<div class="fondologin"></div>
+
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" #newForm="ngForm" (ngSubmit)="login(newForm)">
+            <div class="mb-5">
+                <img src="../../../../assets/images/logooefa.png" alt="logo_oefa" height="65px">
+            </div>
+            <div class="row">
+                <div _ngcontent-oos-c120="" class="col-3" style="text-align: right; padding: 0 0;">
+                    <img _ngcontent-oos-c120="" src="../../../../assets/images/oizquierda.png" alt="logo" class="d-inline" style="height: 50px;">
+                </div>
+                <div _ngcontent-oos-c120="" class="col-6" style="padding: 0 0;">
+                    <span _ngcontent-oos-c120="" class="xs-plusd-nombre-sistema-login">
+                        Plataforma Única <br _ngcontent-oos-c120="">
+                        De Servicios Digitales
+                    </span>
+                </div>
+                <div _ngcontent-oos-c120="" class="col-3" style="text-align: left; padding: 0 0;">
+                    <img _ngcontent-oos-c120="" src="../../../../assets/images/oderecha.png" alt="logo" class="d-inline" style="height: 50px;">
+                </div>
+            </div>
+            <br>
+            <input type="text" placeholder="Usuario" name="c_username" #c_username="ngModel" [(ngModel)]="dataLogin.c_username"/>
+            <input type="password" placeholder="Contraseña" name="c_clave" #c_clave="ngModel" [(ngModel)]="dataLogin.c_clave"/>
+            <button type="submit">Ingresar</button>
+            <p class="message">¿No registrado? <a href="#">Crea una cuenta</a></p>
+        </form>
+    </div>
+</div>
+

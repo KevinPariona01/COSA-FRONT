@@ -1,0 +1,103 @@
+<div class="archivo">
+  <form #formReg *ngIf="!esFoto">
+    <input #simpleInput type="file" [accept]="accept" name="documento" [ngClass]="btnClass"
+      (change)="uploadFile($event)" id="inputFile" [disabled]="disabledSelecArchivo">
+
+    <ejs-tooltip #tooltip [content]="tituloToolTipEliminar" style="float: right" cssClass='custom-tip'
+      *ngIf="(parameter.uiid!=null || archivo.idArchivo > 0)">
+      <mat-icon (click)="onClickQuitarArchivo()" *ngIf="parameter.tipo!='ENVIO_SIGED'"
+        style="cursor: pointer; color:#144AA7; float: right; font-size: 2rem; margin-top: .4rem; margin-right: .5rem;">
+        delete_outline</mat-icon>
+    </ejs-tooltip>
+  </form>
+
+  <form #formReg *ngIf="esFoto">
+    <input #simpleInput [accept]="accept" type="file" name="documento" (change)="uploadFile($event)" id="inputFileFoto">
+    <label for="inputFileFoto" class="btn-file-archivo">
+      <mat-icon>photo_camera</mat-icon>
+      <span>SELECCIONAR FOTO Y/O VIDEO</span>
+    </label>
+  </form>
+
+  <br>
+  <form #formUpload ngNoForm [action]="iframeURL(urlIframe)" target="uploadiframe" method="post"
+    enctype="multipart/form-data" name="formUpload">
+    <input type="text" name="keyh" [value]="hkey" style="display: none">
+  </form>
+
+  <div class="row wrap">
+    <div class="col-12">
+      <iframe #iframeUpload (load)="iframeLoaded()" id="uploadiframe" name="uploadiframe" style="display: none">
+      </iframe>
+    </div>
+    <div class="col-12">
+      <div style="width: 300px;">
+        Formatos permitidos: {{acceptText}}<br>
+        <span *ngIf="!esFoto">
+          Támaño máximo permitido: 5 GB.
+        </span>
+
+        <span *ngIf="esFoto">
+          Támaño máximo permitido: 2 GB.
+        </span>
+      </div>
+    </div>
+    <div class="col-12" style="margin-top: 10px;">
+      <ejs-tooltip #tooltip content='Descargar Archivo' cssClass='custom-tip' *ngIf="parameter.uiid!=null">
+        <span style="font-size: 18px; margin-right: 5px;cursor: pointer;" (click)="downloadFile()"
+          class="e-icons e-download"></span>
+      </ejs-tooltip>
+      <a style="color: blue;font-size: 16px;" class="descarga">{{parameter.nombreArchivo}}</a>
+    </div>
+    <div class="col-12">
+      <div class="progress" *ngIf="progress" style="width: 100%; margin: .5rem;">
+        <div class="progress-bar progress-bar-striped bg-success progress-bar-animated" role="progressbar"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">{{progressText}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIALOG -->
+<ejs-dialog #dialogMesage allowDragging='true' [visible]="false" width='400px' isModal='true'>
+  <ng-template #header>
+    <div title="ARCHIVO" class="e-icon-settings dlg-template">
+      <span style="color: #FFF; font-size: 30px; display: inline-block; position: absolute;"
+        class="e-icons e-M_PV_Comment"></span>
+      <span style="margin-left: 40px;">ARCHIVO</span>
+    </div>
+  </ng-template>
+  <ng-template #content>
+    <div class="dialogContent row">
+      <div class="col-3">
+        <img class="icon-dialog" [src]="imagenDialog" alt="">
+      </div>
+      <div class="col-9 dialogText">
+        <strong>{{mensajeDialog}}</strong>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #footerTemplate>
+    <div class="acciones">
+      <button ejs-button cssClass="e-outline" [isPrimary]="true" style="padding: 10px; margin: 10px;"
+        (click)="aceptarDialog()">ACEPTAR</button>
+      <button ejs-button cssClass="e-outline" [isPrimary]="true" style="padding: 10px; margin: 10px;"
+        (click)="cancelarDialog()">CANCELAR</button>
+    </div>
+  </ng-template>
+</ejs-dialog>
+
+
+<ejs-dialog #ejDialogLoading allowDragging='true' [visible]="false" width='350px'
+  isModal='true' [closeOnEscape]='false'>
+    <div style="text-align:center">
+      <h5 style="text-transform: uppercase;"><strong>{{txModal}}</strong></h5>
+      <div class="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+</ejs-dialog>

@@ -1,0 +1,11 @@
+table{
+  width: 100%;
+}
+.example-section {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+  }
+.example-margin {
+margin: 0 10px;
+}

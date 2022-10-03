@@ -1,0 +1,44 @@
+.message-box-titulo {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.message-box-titulo-icono {
+  color: #FFF;
+  font-size: 24px;
+  margin-right: 10px;
+  /* display: inline-block;
+    position: absolute; */
+}
+
+.e-message-box:before {
+  content: '\e817';
+}
+
+.message-box .e-dlg-header {
+  vertical-align: middle;
+}
+
+.message-box-acciones {
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #144AA7;
+}
+
+.message-box-acciones-aceptar {
+  padding: 10px;
+  margin: 10px;
+}
+
+.message-box-acciones-cancelar {
+  padding: 10px;
+  margin: 10px;
+}
+
+.message-box .e-footer-content {
+  padding: 0px;
+}
+
+.message-box-svg {
+  width: 42px;
+}

@@ -1,0 +1,36 @@
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.error{
+  color: red;
+}
+
+/*  mat-form-field{
+  width: 90%;
+} */
+
+.mat-dialog-title{
+  margin: 0 !important;
+  color: #fff;
+}
+
+.generar{
+  margin-top: 10px!important;
+  max-height: 36px; 
+}
+
+.body{
+  padding: 0 24px 24px 24px;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+h1 {
+  padding: 18px 24px 18px 24px;
+  background-color: #144AA7;
+}

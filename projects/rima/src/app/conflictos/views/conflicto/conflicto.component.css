@@ -1,0 +1,44 @@
+table{
+    width: 98%;
+}
+th{
+    color: white;
+    background-color: #1d85bf;
+  }
+.mat-column-codigo {
+    max-width: 100px !important;
+  }
+.mat-column-identivado {
+  max-width: 100px !important;
+}
+.mat-column-descripcion {
+  max-width: 100px !important;
+}
+.mat-column-rotulo {
+  min-width: 100px !important;
+}
+.mat-column-subsector {
+  min-width: 100px !important;
+}
+.mat-column-estado {
+  min-width: 100px !important;
+}
+.mat-column-acciones1{
+  max-width: 60px !important;
+}
+.mat-column-acciones2{
+  max-width: 60px !important;
+}
+.mat-column-acciones3{
+  max-width: 60px !important;
+}
+.item{
+    padding: 1%;
+    text-align: right;
+}
+.selects{
+  display: flex;
+}
+.selects div{
+  padding: 1%;
+}

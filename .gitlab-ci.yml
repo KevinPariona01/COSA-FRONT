@@ -1,0 +1,30 @@
+stages:
+  - package
+  - build-and-push
+  - deploy
+
+default:
+  interruptible: true
+  cache: &global_cache
+    paths:
+      - node_modules
+      - .yarn
+      - 'packages/*/node_modules'
+      - dist
+      - version.json
+
+package:
+  stage: package
+  image: node:14-buster
+  script:
+    - yarn install
+    - yarn run ng build --prod --baseHref=/siscore/monitoreo/ --deployUrl=/siscore/monitoreo/
+  rules:
+    - if: $CI_COMMIT_BRANCH == "desarrollo"
+
+include:
+  - project: 'oefa/plantillas/ci_cd_stages'
+    ref: latest
+    file:
+      - '/build.yml'
+      - '/deploy-kubernetes.yml'

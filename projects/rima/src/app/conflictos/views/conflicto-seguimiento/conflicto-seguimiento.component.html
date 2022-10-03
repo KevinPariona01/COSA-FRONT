@@ -1,0 +1,219 @@
+<app-menu>
+  <mat-card>
+    <!--CODIGO-->
+    <div>
+      <mat-form-field appearance="fill" fxFlex="20">
+        <mat-label>Código</mat-label>
+        <input matInput placeholder="código" required />
+      </mat-form-field>
+    </div> 
+    <!--DESCRIPCION-->
+    <div>
+      <mat-form-field class="example-full-width" fxFlex="150">
+        <mat-label>Descripcion</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+    </div>
+
+
+    <!--LISTA-->
+    <div>
+      <!--Estados-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Estados</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+            <table mat-table  class="mat-elevation-z8">
+            
+              <!-- Column -->
+              <ng-container matColumnDef="etapa">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+            
+              <!-- Column -->
+              <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+            
+              <!-- Column -->
+              <ng-container matColumnDef="fechIng">
+                <th mat-header-cell *matHeaderCellDef> Weight </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+            
+              <!-- Column -->
+              <ng-container matColumnDef="fechSal">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <!-- Column -->
+              <ng-container matColumnDef="monitoreado">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <!-- Column -->
+              <ng-container matColumnDef="preside">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <!-- Column -->
+              <ng-container matColumnDef="economica">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <!-- Column -->
+              <ng-container matColumnDef="sensibilidad">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+
+              <!-- Column -->
+              <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+            
+              <!--Header-->
+              <tr mat-header-row *matHeaderRowDef="estados"></tr>
+              <tr mat-row *matRowDef="let row; columns: estados;"></tr>
+            </table>
+        </div>
+      </mat-expansion-panel>
+      <!--Zonas-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Zonas</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <table mat-table  class="mat-elevation-z8">
+          
+            <!-- Column -->
+            <ng-container matColumnDef="rotulo">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="departamento">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="provincia">
+              <th mat-header-cell *matHeaderCellDef> Weight </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="distrito">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="ingreso">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <!--Header-->
+            <tr mat-header-row *matHeaderRowDef="zonas"></tr>
+            <tr mat-row *matRowDef="let row; columns: zonas;"></tr>
+          </table>
+        </div>
+      </mat-expansion-panel>
+      <!--Demandas-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Demandas</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <table mat-table  class="mat-elevation-z8">
+          
+            <!-- Column -->
+            <ng-container matColumnDef="rotulo">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="departamento">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="provincia">
+              <th mat-header-cell *matHeaderCellDef> Weight </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+          
+            <!-- Column -->
+            <ng-container matColumnDef="distrito">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="ingreso">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="acciones">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <!--Header-->
+            <tr mat-header-row *matHeaderRowDef="zonas"></tr>
+            <tr mat-row *matRowDef="let row; columns: zonas;"></tr>
+          </table>
+        </div>
+      </mat-expansion-panel>
+      <!--Compromisos-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Compromisos</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+      <!--Stakeholders-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Stakeholders</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+      <!--Actas-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Actas</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+      <!--Unidades Fiscalizables-->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Unidades Fiscalizables</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
+    </div>
+  </mat-card>
+</app-menu>

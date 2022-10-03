@@ -1,0 +1,26 @@
+
+  .layout-container  .mat-tab-group  .mat-tab-header {
+    height: 35px !important;
+    background: #1E85BE;
+    color: #ffffff;
+    align-items: center;
+  }
+  .mat-tab-group.mat-accent .mat-ink-bar {
+    background-color: #ffeb3b !important;
+  }
+
+  .mat-dialog-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+  }
+
+  html, body { height: 100%; }
+  
+  button:focus {
+    outline: dotted none;
+    outline: none;
+  }
+  .custom-dialog-container .mat-dialog-container {
+    padding: 0;
+  }

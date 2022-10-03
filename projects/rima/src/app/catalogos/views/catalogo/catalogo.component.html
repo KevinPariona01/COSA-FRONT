@@ -1,0 +1,88 @@
+<app-menu>
+  <mat-card>
+    <div>
+      <h2>Catalogos</h2>
+    </div>
+    <div class="zonas" >
+      <!--SELECT ZONAS-->
+      <div >
+        <mat-form-field appearance="fill">
+          <mat-label>Catalogos</mat-label>
+          <mat-select>
+            <mat-option value="0" (click)='select("")'>
+              -TODOS LOS CATALOGOS-
+          </mat-option>
+            <mat-option *ngFor="let p of padres" [value]="p.idItem" (click)='select(p.idItem)' >
+              {{ p.valor }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!--BTN INSERT CATALOGO-->
+      <div>
+        <button mat-raised-button color="primary" (click)="edit(null)" >Nuevo Catalogo</button>
+      </div>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+      </mat-form-field>
+    </div>
+    <div>
+      <table mat-table [dataSource]="catalogos" class="mat-elevation-z8">
+        <!-- Column -->
+        <ng-container matColumnDef="id" >
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">{{ element.idCatalogo }}</td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="valor">
+          <th mat-header-cell *matHeaderCellDef>VALOR</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">{{ element.valor }}</td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>NOMBRE</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">{{ element.etiqueta }}</td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef>DESCRIPCION</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef>ESTADO</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">{{ element.activo }}</td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="accion">
+          <th mat-header-cell *matHeaderCellDef>ACCION</th>
+          <td [ngClass]="{'catalogoP': !element.idCatalogo }" mat-cell *matCellDef="let element">
+            <a mat-button color="primary" matTooltip="Editar" (click)="edit(element)" >
+              <mat-icon>edit</mat-icon>
+            </a>
+            <mat-slide-toggle color="primary" [checked]="element.activo" (change)="estado(element)" matTooltip="Desactivar"></mat-slide-toggle>
+          </td>
+        </ng-container>
+
+        <!-- Header -->
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <!--Paginator-->
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    <!--BTN AGREGAR ITM-->
+    <div class="item">
+      <button mat-raised-button color="primary" (click)="edit(null)" >Agregar Item</button>
+    </div>
+  </mat-card>
+</app-menu>

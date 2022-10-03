@@ -1,0 +1,128 @@
+<app-menu>
+    <mat-card>
+        <div class="selects" >
+            <!--SELECT DEPARTAMENTOS-->
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>DEPARTAMENTOS</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let z of zonas" [value]="z.value">
+                            {{z.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!--SELECT PROVINCIAS-->
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>PROVINCIAS</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let z of zonas" [value]="z.value">
+                            {{z.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <!--SELECT DISTRITOS-->
+                <mat-form-field appearance="fill">
+                    <mat-label>DISTRITOS</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let z of zonas" [value]="z.value">
+                            {{z.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <!--SELECT ETAPAS-->
+                <mat-form-field appearance="fill">
+                    <mat-label>ETAPAS</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let z of zonas" [value]="z.value">
+                            {{z.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <!--BTN INSERT CATALOGO-->
+                <button mat-raised-button color="primary">Nuevo Catalogo</button>
+            </div>
+        </div>
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- Column -->
+            <ng-container matColumnDef="codigo">
+                <th mat-header-cell *matHeaderCellDef> Código </th>
+                <td mat-cell *matCellDef="let element">{{element.cod}}</td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="identivado">
+                <th mat-header-cell *matHeaderCellDef> Identivado </th>
+                <td mat-cell *matCellDef="let element">{{element.cod}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="rotulo">
+                <th mat-header-cell *matHeaderCellDef> Rotulo </th>
+                <td mat-cell *matCellDef="let element">{{element.cod}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="subsector">
+                <th mat-header-cell *matHeaderCellDef> Subsector </th>
+                <td mat-cell *matCellDef="let element">{{element.cod}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="estado">
+                <th mat-header-cell *matHeaderCellDef> Estado Actual </th>
+                <td mat-cell *matCellDef="let element">{{element.cod}} </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="acciones1">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <a mat-button color="primary" matTooltip="Ver">
+                        <mat-icon>visibility</mat-icon><!-- accion 1 -->
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="acciones2">
+                <th mat-header-cell *matHeaderCellDef> ACCIONES </th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="edit(element)" mat-button color="primary" matTooltip="Editar">
+                        <mat-icon>edit</mat-icon><!-- accion 1 -->
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Column -->
+            <ng-container matColumnDef="acciones3">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                    <a (click)="seguimiento(element)" mat-button color="primary" matTooltip="Seguimiento">
+                        <mat-icon>library_books</mat-icon><!-- accion 1 -->
+                    </a>
+                </td>
+            </ng-container>
+
+            <!-- Header-->
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+
+        <!-- Button -->
+        <div class="item">
+            <button mat-raised-button color="primary">Agregar Item</button>
+        </div>
+    </mat-card>
+</app-menu>

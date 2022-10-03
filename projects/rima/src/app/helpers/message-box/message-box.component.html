@@ -1,0 +1,27 @@
+<ejs-dialog #dlgMessageBox allowDragging='true' [visible]="false" [width]='messageBoxWidth' isModal='true'
+  class="message-box">
+  <ng-template #header>
+    <div class="e-icon-settings dlg-template">
+      <!-- <span class="message-box-titulo-icono e-icons e-message-box"></span> -->
+      <span class="message-box-titulo">{{messageBoxTitulo}}</span>
+    </div>
+  </ng-template>
+  <ng-template #content>
+    <div class="row">
+      <div class="col-3">
+        <img class="icon-dialog" [src]="messageBoxImagen" alt="">
+      </div>
+      <div class="col-9">
+        <strong>{{messageBoxMensaje}}</strong>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #footerTemplate>
+    <div class="message-box-acciones">
+      <button ejs-button cssClass="e-outline message-box-acciones-aceptar" [isPrimary]="true"
+        (click)="onAceptarClick()">ACEPTAR</button>
+      <button ejs-button cssClass="e-outline message-box-acciones-cancelar" [isPrimary]="true"
+        (click)="onCancelarClick()" *ngIf="!messageBoxSimpleButton">CANCELAR</button>
+    </div>
+  </ng-template>
+</ejs-dialog>

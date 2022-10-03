@@ -1,0 +1,67 @@
+<div class="contenedor-padre">
+  <mat-toolbar class="barra">
+    <mat-toolbar-row>
+      <button (click)="cajon.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>
+        COSA
+      </span>
+      <span class="example-fill-remaining-space"></span>
+      <div class="header__login">
+        <div class="user d-flex">
+          <div>
+            <img src="../../../../assets/images/ico-user.svg" alt="" class="icon_user">
+          </div>
+          <div class="user__well">
+            <p>Bienvenido</p>
+            <p class="user__name text-uppercase">{{userlog}}</p>
+          </div>
+        </div>
+        <div class="logout">
+          <button class="btn_salir" (click)="salir()">
+            <img src="../../../../assets/images/ico-close.svg">
+          </button>
+        </div>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+ <mat-sidenav-container class="contenido">
+    <mat-sidenav style="min-width: 300px;" #cajon mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['/estadistica']" (click)="setItem(1)" [ngClass]="{'select':iditem == 1}">
+          <mat-icon>donut_small</mat-icon>
+          <span>Estadísticas</span>
+        </a>
+        <a mat-list-item [routerLink]="['/expedientes']" (click)="setItem(2)" [ngClass]="{'select':iditem == 2}">
+          <mat-icon>folder_open</mat-icon>
+          <span>Expedientes</span>
+        </a>
+        <a mat-list-item [routerLink]="['/procesos']" (click)="setItem(3)" [ngClass]="{'select':iditem == 3}">
+          <mat-icon>description</mat-icon>
+          <span>Reportes</span>
+        </a>
+        <a mat-list-item [routerLink]="['/procesos']" (click)="setItem(4)" [ngClass]="{'select':iditem == 4}">
+          <mat-icon>settings</mat-icon>
+          <span>Procesos</span>
+        </a>
+        <a mat-list-item [routerLink]="['/catalogo']" (click)="setItem(5)" [ngClass]="{'select':iditem == 5}">
+          <mat-icon>C</mat-icon>
+          <span>Catalogo</span>
+        </a>
+        <a mat-list-item [routerLink]="['/conflicto']" (click)="setItem(6)" [ngClass]="{'select':iditem == 6}">
+          <mat-icon>C</mat-icon>
+          <span>Conflicto</span>
+        </a>
+        <a mat-list-item [routerLink]="['/gettoken']" (click)="setItem(7)" [ngClass]="{'select':iditem == 7}">
+          <mat-icon>settings</mat-icon>
+          <span>Token</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>-->
+    <mat-sidenav-content class="padding-10">
+      <ng-content>
+      </ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

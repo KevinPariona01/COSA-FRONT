@@ -1,0 +1,22 @@
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap:wrap;
+  }
+  .error{
+    color: red;
+  }
+
+ /*  mat-form-field{
+    width: 90%;
+  } */
+
+  .mat-dialog-title{
+    color: #F44336;
+  }
+
+  .generar{
+    margin-top: 10px!important;
+     max-height: 36px; 
+  }

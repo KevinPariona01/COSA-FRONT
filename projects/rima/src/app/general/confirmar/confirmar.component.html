@@ -1,0 +1,8 @@
+<div fxLayout="row" fxFlexAlign="center" fxLayoutGap="10px">
+    <mat-icon class="icon" fxFlex="10">warning</mat-icon >
+    <h2 style="text-align: center;" fxFlex="85">{{titulo}}</h2>    
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="confirmar()">Confirmar</button>
+    <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+</div>

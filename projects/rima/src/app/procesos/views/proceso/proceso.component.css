@@ -1,0 +1,70 @@
+table {
+    width: 100%;
+  }
+  
+  .contenedorBody {
+    margin: 1%;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .cont{
+    align-items: center;
+  }
+  
+  /* .mat-column-editar {
+    width: 32px !important;
+    border-right: 1px solid currentColor !important;
+    padding-right: 24px !important;
+    text-align: center !important;
+  } */
+  .mat-column-nombre {
+    max-width: 250px !important;
+  }
+  .mat-column-acronimo {
+    max-width: 100px !important;
+  }
+  .mat-column-descripcion {
+    min-width: 350px !important;
+  }
+  .mat-column-registroActivo {
+    max-width: 35px !important;
+  }
+  .mat-column-acciones {
+    max-width: 50px !important;
+  } 
+  
+  .acciones{
+    display: flex;
+    flex-direction: row;
+    border-top: none;
+  }
+  
+  
+  th{
+    color: white;
+    background-color: #1d85bf;
+  }
+  
+  .row{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between;
+    flex-wrap: wrap; */
+  }
+  
+  .add{
+    padding-top: 12px;
+  } 
+  
+  tr:nth-of-type(even) {
+    background-color: #53D569;
+  }
+
+  /* tr:hover{
+    background-color: #E7EAED !important; 
+  } */

@@ -1,0 +1,22 @@
+<mat-card>
+    <form #newForm="ngForm" (ngSubmit)="insertar(newForm)">
+        <!--INPUT-->
+        <mat-form-field class="example-full-width" fxFlex="32">
+            <mat-label>Valor</mat-label>
+            <input matInput placeholder="Valor..." name="valor" #valor="ngModel" [(ngModel)]="catalogo.valor">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" fxFlex="32">
+            <mat-label>Etiqueta</mat-label>
+            <input matInput placeholder="Etiqueta..." name="etiqueta" #etiqueta="ngModel" [(ngModel)]="catalogo.etiqueta">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" fxFlex="32">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="Descripcion..." name="descripcion" #descripcion="ngModel" [(ngModel)]="catalogo.descripcion" ></textarea>
+        </mat-form-field>
+        <div>
+            <button  type="submit" mat-raised-button color="primary">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </form>
+</mat-card>

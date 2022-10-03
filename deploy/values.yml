@@ -1,0 +1,158 @@
+# Nombre de los objetos a desplegar.
+name: mfe
+# Nombre del espacio de trabajo (namespace) sobre kubernetes donde se desplegará el microservicio.
+namespace: ima
+# Versión (tag) del microservicio a desplegar. Valor por defecto "latest".
+version: latest
+
+# Configuración del Ingress (https://kubernetes.io/docs/concepts/services-networking/service/)
+ingress:
+  # URL donde irá desplegada la aplicación.
+  url: desarrollo.oefa.gob.pe
+  # Path o contexto donde se expondrá la aplicación, por ejemplo "/my/app".
+  path: /siscore/monitoreo
+  # Habilitar o deshabilitar la reescritura de path hacia "/", es decir que se elimine el path en la petición antes de enviarla a los pods (true|false).
+  rewrite:
+    enabled: true
+  # Habilitar o deshabilitar PathPrefixStrip (true|false).
+  PathPrefixStrip:
+    enable: false
+
+# Configuración de Deployment
+deployment:
+  # Imagen utilizada en el despliegue (no modificar).
+  image: $CI_REGISTRY_IMAGE
+  # Puerto en el cual escucha el pod.
+  port: 80
+  # Protocolo del puerto en el cual escucha el pod (TCP|UDP). Por defecto será TCP.
+  protocol:
+  # Modo de uso del secret (envFrom | volume) por defecto envFrom.
+  secrets:
+    type: envFrom
+    # Si es tipo "volume" configurar lo siguiente.
+    #name:
+    # True o False
+    #readOnly: True
+    #mountPath:
+  configmap:
+    type: envFrom
+    # Si es tipo "volume" configurar lo siguiente.
+    #name:
+    # True o False
+    #readOnly: True
+    #mountPath:
+    #defaultMode:
+
+# Creación de Secrets (https://kubernetes.io/es/docs/concepts/configuration/secret/)
+secrets:
+  enabled: true
+  APPLICATION_OEFA_RIMA_API_ENDPOINT: https://desarrollo.oefa.gob.pe/zuul/rima-backend/rima/api
+  BASE_HREF: https://desarrollo.oefa.gob.pe/siscore/monitoreo/
+  DEPLOY_HREF: https://desarrollo.oefa.gob.pe/siscore/monitoreo/
+
+# Creación de configmap (https://kubernetes.io/es/docs/concepts/configuration/configmap/)
+configmap:
+  enabled: false
+  #var1: key1
+  #var2: key2
+
+# --
+# Configuraciones avanzadas
+# --
+
+# Configuración de reserva y límites de recursos de los pods (https://kubernetes.io/es/docs/concepts/configuration/manage-resources-containers/)
+resources:
+  requests:
+    enabled: false
+    # Memoria reservada por cada pod expresado en megabytes (Mi), por ejemplo 100 Megabytes sería "100Mi". 
+    memory:
+    # CPU reservado por cada pod en expresado microcores (m), por ejemplo un cuarto de core sería "250m", un core completo sería "1000m", etc.
+    cpu:
+  limits:
+    enabled: false
+    # Memoria máxima que puede usar el pod (default deployment.memory).
+    memory:
+    # CPU máximo que puede usar el pod (default deployment.cpu).
+    cpu:
+
+# Configuración del Horizontal Pod Autoscaling (https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+hpa:
+  # Habilitar o deshabilitar la creación de hpa (true|false)
+  enabled: false
+  # Mínimo número de pods a levantar.
+  minReplicas:
+  # Máximo número de pods a escalar.
+  maxReplicas:
+  # Porcentaje de utilización del CPU asignado antes de escalar un pod adicional, se sugiere el valor 80.
+  targetCPUUtilizationPercentage:
+  # Porcentaje de memoria del CPU asignado antes de escalar un pod adicional.
+  targetMemoryUtilizationPercentage:
+
+# Configuración de actuator.
+actuatorport:
+  # Habilitar o deshabilitar la creación del puerto adicional para su uso como actuator dentro del deployment.
+  enabled: false
+  # Puerto del actuator.
+  port:
+
+# Configuración de livenessProbe (https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+livenessProbe:
+  # Habilitar o deshabilitar la creación del livenessProbe.
+  enabled: false
+  #httpGet:
+  #  port:
+  #  path:
+  #  scheme:
+  #failureThreshold:
+  #successThreshold:
+  #periodSeconds:
+  #timeoutSeconds:
+
+# Configuración de readinessProbe (https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+readinessProbe:
+  enabled: true
+  httpGet:
+    path: /siscore/monitoreo/index.html
+    port: 80
+  failureThreshold: 30
+  periodSeconds: 2
+
+# Configuración de startupProbe (https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+startupProbe:
+  enabled: false
+  #httpGet:
+  #  port:
+  #  path:
+  #  scheme:
+  #failureThreshold:
+  #successThreshold:
+  #periodSeconds:
+  #timeoutSeconds:
+
+# Configuración del Service Monitor (https://observability.thomasriley.co.uk/prometheus/configuring-prometheus/using-service-monitors/)
+serviceMonitor:
+  enabled: false
+  path:
+  interval:
+  scrapeTimeout:
+  relabelings: []
+  metricRelabelings: []
+  honorLabels: false
+
+# Configuración del Security context usado para correr los contenedores del pod con menos privilegios [no root] (https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+podSecurityContext:
+  enabled: false
+  #fsGroup: 1000
+
+# Configuración del Security context usado para correr el contenedor principal con menos privilegios [no root] (https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+containerSecurityContext:
+  enabled: false
+  #runAsUser: 1001
+  #runAsNonRoot: true
+  #runAsGroup: 1001
+  #allowPrivilegeEscalation: false
+  #privileged: false
+  #capabilities:
+  #  drop:
+  #    - ALL
+  #readOnlyRootFilesystem: false

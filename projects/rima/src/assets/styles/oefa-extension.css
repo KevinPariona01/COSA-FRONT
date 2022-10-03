@@ -1,0 +1,73 @@
+/* ESTILOS DE DIALOGO */
+.e-dlg-header-content {
+    background-color: #144AA7;
+  }
+  .e-dialog.e-draggable .e-dlg-header-content{
+    height: 50px;
+    padding-top: 10px;
+  }
+  .e-dlg-header, .e-dlg-header *{
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .acciones{
+    border-top: solid 1px #144AA7;
+  }
+  .e-dlg-content{
+    margin-top: 10px;
+  }
+  .icon-dialog{
+    width: 60px;
+  }
+  .dialogText{
+    align-self: center;
+  }
+  .e-M_PV_Comment:before{
+    content:'\ec10';
+  }
+  .e-grid.e-default .e-headercell, 
+  .e-grid.e-default .e-detailheadercell{
+    background-color: #144AA7;
+    color: #FFF;
+}
+
+.e-checkbox-wrapper label, 
+.e-css.e-checkbox-wrapper label{
+  background: #FFF;
+}
+	
+.e-control.e-dialog.e-lib.e-draggable.e-popup.e-popup-open{
+  max-height: none !important;
+}
+
+/* .ng-star-inserted{
+  height: 850px !important;
+}*/
+
+.fadeInEt {
+  animation-name: opacityEt;
+  animation-duration: .8s;
+}
+
+@keyframes opacityEt {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.e-contextmenu-wrapper ul.e-contextmenu, .e-contextmenu-container ul.e-contextmenu{
+  font-weight: bold;
+}
+
+.e-grid .e-rowcell {
+  padding: 8px 8px !important;  
+}
+
+.e-grid .e-gridheader tr th:first-child{
+  padding-left: 8px !important;
+}

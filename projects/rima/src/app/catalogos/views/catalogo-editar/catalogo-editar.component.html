@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Editar Catalogos</h1>
+<div class="body" >
+    <br>
+    <form #newForm="ngForm" (ngSubmit)="validarIgualdad(newForm)">
+        <div class="f1">
+            <!--SELECT DE CATALOGOS PADRES-->
+            <div fxFlex="20 ">
+                <mat-form-field appearance="fill"  >
+                    <mat-label>Catalogos</mat-label>
+                    <mat-select [formControl]="selectFormControl" [(value)]="catalogo.idCatalogo" >
+                        <mat-option *ngFor="let p of padres" [value]="p.idItem" required>
+                            {{ p.valor }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <!--INPUT-->
+            <div fxFlex="32">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Valor</mat-label>
+                    <input matInput placeholder="Valor..." name="valor" #valor="ngModel" [(ngModel)]="catalogo.valor" maxlength="2" required>
+                    <mat-hint class="error" *ngIf="catalogo.valor.length > 0">debe tener maximo de 2 dígitos</mat-hint>
+                </mat-form-field>
+            </div>
+            <div fxFlex="32">
+                <mat-form-field class="example-full-width"  >
+                    <mat-label>Etiqueta</mat-label>
+                    <input matInput placeholder="Etiqueta..." name="etiqueta" #etiqueta="ngModel" [(ngModel)]="catalogo.etiqueta" minlength="3" required >
+                    <mat-hint class="error" *ngIf="catalogo.etiqueta.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <mat-form-field class="descripcion">
+                <mat-label>Descripcion</mat-label>
+                <textarea matInput placeholder="Descripcion..." name="descripcion" #descripcion="ngModel" [(ngModel)]="catalogo.descripcion" minlength="3" required></textarea>
+                <mat-hint class="error" *ngIf="catalogo.descripcion.length < 3">debe tener mínimo de 3 dígitos</mat-hint>
+            </mat-form-field>
+        </div>
+        <div>
+            <button matTooltip="Guardar" type="submit" mat-raised-button color="primary" [disabled]="!newForm.form.valid">
+                <mat-icon>save</mat-icon>
+            </button>
+        </div>
+    </form>
+</div>

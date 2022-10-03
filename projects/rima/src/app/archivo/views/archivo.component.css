@@ -1,0 +1,174 @@
+.e-search:before {
+    content: '\e993';
+}
+
+.e-upload:before {
+    content: '\e725';
+}
+
+.e-font:before {
+    content: '\e34c';
+}
+
+.e-download:before {
+    content: '\e603';
+}
+
+.custom-tip {
+    background: #144AA7;
+    color: #144AA7;
+    border-color: #144AA7;
+}
+
+.archivo .adj__input {
+    color: transparent;
+    width: 200px;
+    height: 43px;
+    position: relative;
+}
+
+.archivo .adj__input::before {
+    content: '+ Adjuntar archivo';
+    background: #144AA7;
+    /*#27c968*/
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    border-radius: 5px !important;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+}
+
+.archivo .adj__input2::before {
+    content: '+ Adjuntar certificado de calibración';
+    background: #144AA7;
+    /*#27c968*/
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    border-radius: 5px !important;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+}
+
+/* FOTO */
+
+.archivo .adj__foto {
+    color: transparent;
+    width: 200px;
+    height: 43px;
+    position: relative;
+}
+
+.archivo .adj__foto::before {
+    content: '+ Adjuntar Foto';
+    background: #144AA7;
+    /*#27c968*/
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    border-radius: 5px !important;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+}
+
+#inputFileFoto {
+    display:none;
+}
+
+.btn-file-archivo {
+    background-color: #144AA7;
+    color: #fff;
+    padding: .3rem .5rem;
+    cursor: pointer;
+    border-radius: .3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .3s;
+}
+
+.btn-file-archivo:hover{
+    box-shadow: 0.1rem -0.1rem 0.5rem #999;
+}
+
+.btn-file-archivo span:nth-child(2){
+    margin-left: .4rem;
+}
+
+
+/* LOADING */
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 50px;
+  }
+  
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #144aa7;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+  

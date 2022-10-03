@@ -1,0 +1,14 @@
+/* button{
+    margin-left: 8px;
+} */
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.icon{
+    font-size: xxx-large;
+    margin-top: 18px;    
+    color: #ffa000;
+}
